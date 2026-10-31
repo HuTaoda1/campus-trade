@@ -41,12 +41,18 @@ campus-trade/
 # 编译 + 跑测试 + 打包（最常用）
 mvn clean package
 
+# 运行（推荐：脚本会自动切到 UTF-8，中文不乱码）
+.\run.cmd
+
 # 直接运行
 mvn -q exec:java
 
 # 运行打好的 jar
 java -jar target/campus-trade-0.1.0-SNAPSHOT.jar
 ```
+
+> **Windows 终端中文乱码？** 系统默认代码页是 936，Java 输出的 UTF-8 会被显示成乱码。
+> 用 `run.cmd`（已自动 `chcp 65001`），或先手动执行 `chcp 65001`。在 IDEA 里运行没有这个问题。
 
 预期输出：
 
